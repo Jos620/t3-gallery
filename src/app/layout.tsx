@@ -1,9 +1,13 @@
 import "@/styles/globals.css";
+import "@uploadthing/react/styles.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import Header from "./_components/header";
+import { extractRouterConfig } from "uploadthing/server";
+import { fileRouter } from "./api/uploadthing/core";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -18,8 +22,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className={`${GeistSans.variable} dark`}>
         <body>
-          <Header />
+          <NextSSRPlugin routerConfig={extractRouterConfig(fileRouter)} />
 
+          <Header />
           <main className="container py-4">{children}</main>
         </body>
       </html>
