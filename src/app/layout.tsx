@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import Header from "./_components/header";
 
 export const metadata: Metadata = {
@@ -14,12 +15,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} dark`}>
-      <body>
-        <Header />
+    <ClerkProvider>
+      <html lang="en" className={`${GeistSans.variable} dark`}>
+        <body>
+          <Header />
 
-        <main className="container py-4">{children}</main>
-      </body>
-    </html>
+          <main className="container py-4">{children}</main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
