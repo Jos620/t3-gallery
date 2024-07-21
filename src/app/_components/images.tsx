@@ -1,5 +1,6 @@
 import { getMyImages } from "@/server/queries";
 import Image from "next/image";
+import Link from "next/link";
 
 export async function Images() {
   const images = await getMyImages();
@@ -11,8 +12,10 @@ export async function Images() {
           key={img.id}
           className="flex h-max flex-col gap-1 bg-foreground p-1 text-background"
         >
-          <Image src={img.url} alt={img.name} width={190} height={190} />
-          <p>{img.name}</p>
+          <Link href={`/photos/${img.id}`}>
+            <Image src={img.url} alt={img.name} width={190} height={190} />
+            <p>{img.name}</p>
+          </Link>
         </div>
       ))}
     </div>
