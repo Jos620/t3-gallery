@@ -13,18 +13,18 @@ export default async function PhotoFullPage({ id }: PhotoFullPage) {
   const uploaderInfo = await clerkClient().users.getUser(image.userId);
 
   return (
-    <div className="flex h-full w-full min-w-0">
-      <div className="flex w-full flex-shrink items-center justify-center">
+    <div className="flex h-full w-full min-w-0 flex-col md:flex-row">
+      <div className="flex h-full w-full flex-shrink items-center justify-center p-4">
         <Image
           src={image.url}
           alt={image.name}
           width={384}
           height={384}
-          className="object-contain"
+          className="object-contain shadow-xl"
         />
       </div>
 
-      <div className="flex w-48 flex-shrink-0 flex-col gap-2 border-l border-muted">
+      <div className="flex h-full w-full flex-col gap-2 border-l border-t border-muted bg-background md:w-64 md:flex-shrink-0 md:border-t-0 lg:w-96">
         <div className="border-b border-muted p-4">
           <h1 className="text-lg font-bold">{image.name}</h1>
         </div>
