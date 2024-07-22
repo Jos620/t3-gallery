@@ -25,7 +25,7 @@ export function Modal({ children }: ModalProps) {
   return createPortal(
     <dialog
       ref={dialogRef}
-      className="h-screen w-screen bg-zinc-900/50 text-foreground"
+      className="h-screen w-screen bg-background/85 text-foreground"
       onClose={onDismiss}
     >
       {children}

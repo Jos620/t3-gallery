@@ -28,12 +28,12 @@ export default function RootLayout({
         <body>
           <NextSSRPlugin routerConfig={extractRouterConfig(fileRouter)} />
 
-          <Header />
-          <main className="container py-4">
-            {children}
-            {modal}
-          </main>
+          <div className="grid h-screen grid-rows-[auto,1fr]">
+            <Header />
+            <main className="overflow-y-auto">{children}</main>
+          </div>
 
+          {modal}
           <div id="modal-root"></div>
         </body>
       </html>

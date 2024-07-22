@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 p-4">
       <SignedOut>
         <p className="text-center text-2xl">Please sign in above</p>
       </SignedOut>
