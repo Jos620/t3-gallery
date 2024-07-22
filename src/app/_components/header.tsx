@@ -12,7 +12,7 @@ export default function Header() {
     <header className="border-b border-muted py-4">
       <div className="container flex items-center justify-between">
         <Link href="/">
-          <div className="h-10 w-10 rounded-lg bg-white"></div>
+          <div className="h-10 w-10 rounded-lg bg-foreground"></div>
         </Link>
 
         <nav className="flex">

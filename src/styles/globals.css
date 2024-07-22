@@ -67,3 +67,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+dialog {
+  max-width: 100vw;
+  max-height: 100vh;
+}
