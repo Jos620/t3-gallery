@@ -1,5 +1,6 @@
 "use client";
 
+import { Logo } from "@/components/logo";
 import { UploadButton } from "@/components/uploadthing/button";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
@@ -12,7 +13,7 @@ export default function Header() {
     <header className="border-b border-muted py-4">
       <div className="container flex items-center justify-between">
         <Link href="/">
-          <div className="h-10 w-10 rounded-lg bg-foreground"></div>
+          <Logo />
         </Link>
 
         <nav className="flex">
